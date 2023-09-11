@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PagViajes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="/index.html"><img src="/Images/logo.png" alt="" height="35px"></a>
+                <h1 class="nameLogo">Viajes Flybirds</h1>
+            </div>
+            <div class="registro">
+                <div class="login">
+                    <a href="iniciarSesion.html"><img src="/Images/login.png" alt="0" height="35px"></a>
+                    <p><a href="iniciarSesion.html">Iniciar Sesion</a></p>
+                </div>
+            </div>
+            <div class="botonNav navbar">
+                <div class="buscaTuVuelo"><a href="index.html">Busca tu vuelo</a></div>
+                <div class="promociones"><a href="promociones.html">Club Flybirds</a></div>
+                <div class="actividades"><a href="actividades.html">Actividades</a></div>
+                <div class="actividades" id="miReserva"><a href="reserva.html">Mi Reserva</a></div>
+            </div>
+        </header>
+
+        <div class="izq"></div>
+
+        <div id="botonReserva" class="der" style="display: none;">
+            <h2>Detalles de la reserva</h2>
+            <div id="detalleIda"></div>
+            <div id="detalleVuelta"></div>
+            <button onclick="reservarVuelo()">Reservar</button>
+        </div>
+
+        <div class="contenido">
+            <div class="form" id="formBusqueda" style="display: block;">
+                <form name="buscarVuelo" onsubmit="return validarBusquedaVuelo()">
+                    <div class="barraSuperior">
+                        <h1>Buscá tu vuelo!</h1>
+                    </div>
+                    <div>
+                        <label for="">Origen</label>
+                        <input list="browsers" id="orgigen" placeholder="Ingrese un destino">
+                            <datalist id="browsers" role="listbox">
+                                <option value="EZE">Bueno Aires - Argentina</option>
+                                <option value="FTE">El Calafate - Argentina</option>
+                                <option value="CTC">Catamarca - Argentina</option>
+                                <option value="CRD">Comodoro Rivadavia - Argentina</option>
+                                <option value="COR">Córdoba - Argentina</option>
+                                <option value=CNQ>Corrientes - Argentina</option>
+                                <option value="FMA">Formosa - Argentina</option>
+                                <option value="IGR">Iguazú - Argentina</option>
+                                <option value="JUJ">Jujuy - Argentina</option>
+                                <option value="IRJ">La Rioja - Argentina</option>
+                                <option value="MDQ">Mar del Plata - Argentina</option>
+                                <option value=MDZ>Mendoza - Argentina</option>
+                                <option value="NQN">Neuquén - Argentina</option>
+                                <option value="PRA">Paraná - Argentina</option>
+                                <option value="PSS">Posadas - Argentina</option>
+                                <option value="RSS">Resistencia - Argentina</option>
+                                <option value="RGL">Río Gallegos - Argentina</option>
+                                <option value="ROS">Rosario - Argentina</option>
+                                <option value="SLA">Salta - Argentina</option>
+                                <option value="BRC">San Carlos de Bariloche - Argentina</option>
+                                <option value="UAQ">San Juan - Argentina</option>
+                                <option value="LUQ">San Luis - Argentina</option>
+                                <option value="TUC">Tucumán - Argentina</option>
+                                <option value="SAF">Santa Fe - Argentina</option>
+                                <option value="RSA">Santa Rosa - Argentina</option>
+                                <option value="SGO">Santiago del Estero - Argentina</option>
+                                <option value="TRE">Trelew - Argentina</option>
+                                <option value="USH">Ushuaia - Argentina</option>
+                                <option value="VDM">Viedma - Argentina</option>
+                                <option value="CPC">Chapelco - Argentina</option>
+                            </datalist>
+                            <label for="">Destino</label>
+                            <input id="destino" list="browsers" placeholder="Ingrese un destino">
+
+                            <label for="" id="lblSalida">Salida</label>
+                            <input type="date" id="inputSalida">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
