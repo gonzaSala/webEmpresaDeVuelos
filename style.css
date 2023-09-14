@@ -163,6 +163,95 @@ button {
 }
 .formulario div select {
     border-radius: 20px;
-
 }
 
+.form2 {
+    min-width: 200px;
+    max-width: 300px;
+    background-color: rgb(242, 242, 242);
+    margin: 10px 10px 10px 0px;
+    width: 35%;
+    border-color: black;
+    border-right: solid;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: dashed;
+    border-radius: 0px 30px 30px 0px;
+    ;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.form2 div:nth-child(1n+2) {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.form2 div select {
+    border-radius: 5px;
+    margin: 5px;
+    width: 40%;
+    border: 2px solid;
+    border-color: rgb(111, 109, 111);
+}
+
+.form2 div input {
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgb(255, 199, 28);
+}
+
+
+.vuelos{
+    min-width: 600px;
+    max-width: 900px;
+    background-color: wheat;
+    margin: 10px 0 10px 10px;
+    width: 65%;
+    border-color: black;
+    border-right: solid;
+    border: solid;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px 0 black;
+}
+
+#detalleIda{
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+    border: solid 1px;
+}
+#detalleIda div{
+    display: flex;
+    justify-content: space-evenly;
+    border: solid 1px;
+}
+#detalleVuelta{
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+    border: solid 1px;
+    margin-top: 10px;
+}
+#detalleVuelta div{
+    display: flex;
+    justify-content: space-evenly;
+    border: solid 1px;
+}
+
+.barraSuperiorVuelo{
+    position: sticky;
+    top:0;
+}
+.barraSuperiorVuelo div {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(206, 55, 62);
+    margin-top: 0px;
+    border-radius: 30px 30px 0px 0px;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    position: sticky;
+    top: 0;
+}

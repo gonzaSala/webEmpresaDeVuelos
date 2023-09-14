@@ -41,6 +41,7 @@
 
         <div class="contenido">
             <div class="form" id="formBusqueda" style="display: block;">
+
                 <form name="buscarVuelo" onsubmit="return validarBusquedaVuelo()">
                     <div class="barraSuperior">
                         <h1>Buscá tu vuelo!</h1>
@@ -48,49 +49,169 @@
                     <div>
                         <label for="">Origen</label>
                         <input list="browsers" id="orgigen" placeholder="Ingrese un destino">
-                            <datalist id="browsers" role="listbox">
-                                <option value="EZE">Bueno Aires - Argentina</option>
-                                <option value="FTE">El Calafate - Argentina</option>
-                                <option value="CTC">Catamarca - Argentina</option>
-                                <option value="CRD">Comodoro Rivadavia - Argentina</option>
-                                <option value="COR">Córdoba - Argentina</option>
-                                <option value=CNQ>Corrientes - Argentina</option>
-                                <option value="FMA">Formosa - Argentina</option>
-                                <option value="IGR">Iguazú - Argentina</option>
-                                <option value="JUJ">Jujuy - Argentina</option>
-                                <option value="IRJ">La Rioja - Argentina</option>
-                                <option value="MDQ">Mar del Plata - Argentina</option>
-                                <option value=MDZ>Mendoza - Argentina</option>
-                                <option value="NQN">Neuquén - Argentina</option>
-                                <option value="PRA">Paraná - Argentina</option>
-                                <option value="PSS">Posadas - Argentina</option>
-                                <option value="RSS">Resistencia - Argentina</option>
-                                <option value="RGL">Río Gallegos - Argentina</option>
-                                <option value="ROS">Rosario - Argentina</option>
-                                <option value="SLA">Salta - Argentina</option>
-                                <option value="BRC">San Carlos de Bariloche - Argentina</option>
-                                <option value="UAQ">San Juan - Argentina</option>
-                                <option value="LUQ">San Luis - Argentina</option>
-                                <option value="TUC">Tucumán - Argentina</option>
-                                <option value="SAF">Santa Fe - Argentina</option>
-                                <option value="RSA">Santa Rosa - Argentina</option>
-                                <option value="SGO">Santiago del Estero - Argentina</option>
-                                <option value="TRE">Trelew - Argentina</option>
-                                <option value="USH">Ushuaia - Argentina</option>
-                                <option value="VDM">Viedma - Argentina</option>
-                                <option value="CPC">Chapelco - Argentina</option>
-                            </datalist>
-                            <label for="">Destino</label>
-                            <input id="destino" list="browsers" placeholder="Ingrese un destino">
+                        <datalist id="browsers" role="listbox">
+                            <option value="EZE">Bueno Aires - Argentina</option>
+                            <option value="FTE">El Calafate - Argentina</option>
+                            <option value="CTC">Catamarca - Argentina</option>
+                            <option value="CRD">Comodoro Rivadavia - Argentina</option>
+                            <option value="COR">Córdoba - Argentina</option>
+                            <option value=CNQ>Corrientes - Argentina</option>
+                            <option value="FMA">Formosa - Argentina</option>
+                            <option value="IGR">Iguazú - Argentina</option>
+                            <option value="JUJ">Jujuy - Argentina</option>
+                            <option value="IRJ">La Rioja - Argentina</option>
+                            <option value="MDQ">Mar del Plata - Argentina</option>
+                            <option value=MDZ>Mendoza - Argentina</option>
+                            <option value="NQN">Neuquén - Argentina</option>
+                            <option value="PRA">Paraná - Argentina</option>
+                            <option value="PSS">Posadas - Argentina</option>
+                            <option value="RSS">Resistencia - Argentina</option>
+                            <option value="RGL">Río Gallegos - Argentina</option>
+                            <option value="ROS">Rosario - Argentina</option>
+                            <option value="SLA">Salta - Argentina</option>
+                            <option value="BRC">San Carlos de Bariloche - Argentina</option>
+                            <option value="UAQ">San Juan - Argentina</option>
+                            <option value="LUQ">San Luis - Argentina</option>
+                            <option value="TUC">Tucumán - Argentina</option>
+                            <option value="SAF">Santa Fe - Argentina</option>
+                            <option value="RSA">Santa Rosa - Argentina</option>
+                            <option value="SGO">Santiago del Estero - Argentina</option>
+                            <option value="TRE">Trelew - Argentina</option>
+                            <option value="USH">Ushuaia - Argentina</option>
+                            <option value="VDM">Viedma - Argentina</option>
+                            <option value="CPC">Chapelco - Argentina</option>
+                        </datalist>
+                        <label for="">Destino</label>
+                        <input id="destino" list="browsers" placeholder="Ingrese un destino">
 
-                            <label for="" id="lblSalida">Salida</label>
-                            <input type="date" id="inputSalida">
+                        <label for="" id="lblSalida">Salida</label>
+                        <input type="date" id="inputSalida">
+                    </div>
+                    <div style="flex-direction: row;">
+                        <input type="radio" id="idaYVuelta" name="seleccion" onclick="idaVuelta()" checked>
+                        <label for="">Ida y Vuelta</label>
+                        <input type="radio" id="soloIda" list="seleccion" onclick="soloIda()">
+                        <label for="">Solo ida</label>
+                        <input type="radio" id="multipleDestino" name="seleccion" onclick="multipleDestinos()">
+                        <label for="">Multiples Destinos</label>
+                        <select id="clase" class="select">
+                            <option value="1">Todas las clases</option>
+                            <option value="2">Clase Económica</option>
+                            <option value="3">Clase Ejecutiva</option>
+                        </select>
+                    </div>
+                    <div id="divIdaYVuelta">
+                        <label for="" id="ida">Ida</label>
+                        <input type="date" id="inputIda">
+                        <label for="" id="vuelta">Vuelta</label>
+                        <input type="date" id="inputVuelta">
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="form2" id="formVuelo" style="display: block;">
+                <form onsubmit="return validarBusquedaVuelo()">
+                    <div class="barraSuperior2">
+                        <h1>Pasajeros</h1>
+                        <div>
+                            <label for="">Mayores(+18)</label>
+                            <select id="adultos">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Menores (2-17)</label>
+                            <select id="niños">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Bebés (0-2)</label>
+                            <select name="" id="bebes">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="submit" value="Buscar">
+                        </div>
                     </div>
                 </form>
             </div>
+
+            <div id="itinerarioVuelo" style="display: none;">
+                <div class="vuelos">
+                    <div class="barraSuperiorVuelo">
+                        <div>
+                            <h1>Ida</h1>
+                            <h1 id="origenIda">a</h1>
+                            <h1>---------></h1>
+                            <h1 id="destinoIda">b</h1>
+                        </div>
+                    </div>
+                    <div id="vuelosIda"></div>
+                </div>
+                <div class="vuelos">
+                    <div class="barraSuperiorVuelo">
+                        <div>
+                            <h1>Vuelta</h1>
+                            <h1 id="origenVuelta">a</h1>
+                            <h1>---------></h1>
+                            <h1 id="destinoVuelta">b</h1>
+                        </div>
+                    </div>
+                    <div id="vuelosVuelta"></div>
+                </div>
+
+            </div>
         </div>
-sdsd
+
+        <div class="ofertas">
+            <div>
+                <h1>¡Aprovechá nuestras ofertas!</h1>
+            </div>
+            <div class="tablaViaje">
+                <div>
+                    <img src="/Images/rio de janeiro.jpg" alt="">
+                    <label for="">Rio de Janeiro</label>
+                    <p>$54900</p>
+                </div>
+                <div>
+                    <img src="/Images/londres.jpg" alt="">
+                    <label for="">Londres</label>
+                    <p>$109899</p>
+                </div>
+                <div>
+                    <img src="/Images/paris.jpg" alt="">
+                    <label for="">Paris</label>
+                    <p>$119899</p>
+                </div>
+                <div>
+                    <img src="/Images/new york.jpg" alt="">
+                    <label for="">New York</label>
+                    <p>$95989</p>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <script type="text/javascript" src="footer.js"></script>
+    </footer>
+    <script type="text/javascript" src="validacionBuscaVuelo.js"></script>
 
 </body>
 
